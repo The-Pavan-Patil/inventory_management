@@ -2,6 +2,8 @@
 import { useGetDashboardMetricsQuery } from '@/State/api'
 import React from 'react'
 import { DashboardMetrics } from '@/State/api'
+import { ShoppingBag } from 'lucide-react'
+import Rating from '../(components)/Rating'
 
 const CardPopularProducts = () => {
 
@@ -25,9 +27,16 @@ const CardPopularProducts = () => {
                               ${product.price}
                             </span>
                             <span className='mx-2'> | </span>
-                            <div>rating</div>
+                            <Rating rating={product.rating || 0}></Rating>
+            
                           </div>
                         </div>
+                      </div>
+                      <div className='text-sm flex items-center'>
+                        <button className='p-2 rounded-full bg-blue-100 text-blue-600 mr-2'>
+                          <ShoppingBag className="w-4 h-4"/>
+                        </button>
+                        <span className='text-gray-600 text-sm'>{Math.round(product.stockQuantity/1000)}k sold</span>
                       </div>
                       </div>
                   ))}
