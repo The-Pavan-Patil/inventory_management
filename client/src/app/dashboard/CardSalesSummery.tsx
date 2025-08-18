@@ -12,6 +12,7 @@ import {
   YAxis,
 } from "recharts";
 
+// CardSalesSummary component to display sales summary data
 const CardSalesSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
   const salesData = data?.salesSummary || [];
