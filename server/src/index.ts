@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
 
 
 // routes import
@@ -23,7 +24,7 @@ app.use(helmet.crossOriginResourcePolicy({policy : "cross-origin"}))
 
 // ROUTES 
 app.use('/dashboard' , dashboardRoutes )
-
+app.use('/products' , productRoutes) 
 //Server
 const port = process.env.PORT || 3001;
 app.listen(port , () => {

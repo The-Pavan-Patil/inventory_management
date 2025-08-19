@@ -10,6 +10,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const helmet_1 = __importDefault(require("helmet"));
 const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
+const productRoutes_1 = __importDefault(require("./routes/productRoutes"));
 // routes import
 // config
 const app = (0, express_1.default)();
@@ -24,6 +25,7 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use(helmet_1.default.crossOriginResourcePolicy({ policy: "cross-origin" }));
 // ROUTES 
 app.use('/dashboard', dashboardRoutes_1.default);
+app.use('/products', productRoutes_1.default);
 //Server
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
